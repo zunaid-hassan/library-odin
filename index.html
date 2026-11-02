@@ -17,29 +17,39 @@
         <!-- <p>Work-in-progress</p> -->
       </div>
 
-      <div class="btn-container">
+      <div class="add-new-book-btn-container">
         <button
           class="add-new-book-btn"
           command="show-modal"
           commandfor="add-new-book-modal"
         >
-          Add new book
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+            />
+          </svg>
+          <span>Add new book</span>
         </button>
       </div>
     </header>
-    <dialog id="add-new-book-modal">
+    <dialog id="add-new-book-modal" open>
       <p class="add-new-book-text">Add a new book:</p>
       <form method="dialog">
         <div class="add-new-book grid">
-          <label for="book-name-value">Book:</label>
+          <label for="book-title-value">Title:</label>
           <input
             type="text"
-            id="book-name-value"
-            placeholder="e.g. Fantasy World"
+            id="book-title-value"
+            placeholder="e.g. A Game of Thrones"
           />
 
           <label for="author-value">Author:</label>
-          <input type="text" id="author-value" placeholder="e.g. John Bob" />
+          <input
+            type="text"
+            id="author-value"
+            placeholder="e.g. George R.R. Martin"
+          />
 
           <label for="pages-value">Pages:</label>
           <input
@@ -65,17 +75,33 @@
           </div>
         </div>
       </form>
-      <button
-        commandfor="add-new-book-modal"
-        command="close"
-        class="close-add-new-book-btn"
-      >
-        Close
-      </button>
+      <div class="btns-container grid">
+        <button type="submit" class="submit-new-book-btn">Submit</button>
+        <button
+          commandfor="add-new-book-modal"
+          command="close"
+          class="close-add-new-book-btn"
+        >
+          Close
+        </button>
+      </div>
     </dialog>
 
     <main class="wrapper grid">
       <div class="books-container grid">
+        <div class="book-card grid">
+          <div class="card-title grid">
+            <h2 class="book-title">The Book Title</h2>
+            <button class="remove-book-btn">🗑</button>
+          </div>
+          <div class="author label">Author:</div>
+          <div class="author">The Author</div>
+          <div class="pages label">Pages:</div>
+          <div class="pages">310</div>
+          <div class="Read-status label">Status:</div>
+          <div class="Read-status">Read</div>
+        </div>
+
         <!-- <div class="book-card grid">
           <h2 class="book-title">Harry Potter</h2>
 

@@ -32,3 +32,5 @@ https://fonts.google.com/specimen/Neuton?preview.layout=grid&lang=en_Latn&catego
 https://fonts.google.com/specimen/DM+Serif+Text?preview.layout=grid&lang=en_Latn&categoryFilters=Feeling:%2FExpressive%2FBusiness&preview.lang=en_Latn&preview.script=Latn
 
 - [Roboto](https://fonts.google.com/specimen/Roboto) by Christian Robertson, ParaType, Font Bureau -->
+
+<!-- COLOR PALLETE: https://colorhunt.co/palette/2900445000718a2a78eee3b0 -->
