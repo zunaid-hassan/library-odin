@@ -18,11 +18,7 @@
       </div>
 
       <div class="add-new-book-btn-container">
-        <button
-          class="add-new-book-btn"
-          command="show-modal"
-          commandfor="add-new-book-modal"
-        >
+        <button class="add-new-book-btn">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path
               fill="currentColor"
@@ -35,51 +31,68 @@
     </header>
     <dialog id="add-new-book-modal" open>
       <p class="add-new-book-text">Add a new book:</p>
-      <form method="dialog">
+      <form id="add-new-book-form" method="dialog">
         <div class="add-new-book grid">
-          <label for="book-title-value">Title:</label>
+          <label for="title-value">Title:</label>
           <input
             type="text"
-            id="book-title-value"
+            id="title-value"
+            name="book-title"
             placeholder="e.g. A Game of Thrones"
+            required
           />
 
           <label for="author-value">Author:</label>
           <input
             type="text"
             id="author-value"
+            name="book-author"
             placeholder="e.g. George R.R. Martin"
+            required
           />
 
           <label for="pages-value">Pages:</label>
           <input
             type="number"
             id="pages-value"
+            name="book-pages"
             placeholder="e.g. 302"
             min="1"
+            required
           />
 
-          <label for="status-value">Status:</label>
+          <label>Status:</label>
           <div id="status-value">
-            <input type="radio" value="read" id="read" name="status" />
-            <label for="read">Read</label>
+            <input
+              type="radio"
+              value="Read"
+              id="read-status"
+              name="book-status"
+            />
+            <label for="read-status">Read</label>
 
             <input
               type="radio"
-              value="unread"
-              id="unread"
-              name="status"
+              value="Unread"
+              id="unread-status"
+              name="book-status"
               checked
             />
-            <label for="unread">Unread</label>
+            <label for="unread-status">Unread</label>
           </div>
         </div>
       </form>
       <div class="btns-container grid">
-        <button type="submit" class="submit-new-book-btn">Submit</button>
         <button
-          commandfor="add-new-book-modal"
-          command="close"
+          form="add-new-book-form"
+          type="submit"
+          class="submit-new-book-btn"
+        >
+          Submit
+        </button>
+        <button
+          form="add-new-book-form"
+          type="button"
           class="close-add-new-book-btn"
         >
           Close

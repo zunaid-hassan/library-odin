@@ -97,6 +97,51 @@ function displayReadStatus(book, bookCard) {
 
 displayBooks(myLibrary);
 
+const dialog = document.querySelector("#add-new-book-modal");
+
+const addNewBookBtn = document.querySelector(".add-new-book-btn");
+
+const closeBtn = document.querySelector(".close-add-new-book-btn");
+
+const bookForm = document.querySelector("#add-new-book-form");
+
+addNewBookBtn.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeBtn.addEventListener("click", (event) => {
+  // event.preventDefault();
+  dialog.requestClose();
+});
+
+bookForm.addEventListener("submit", () => {
+  const inputs = document.getElementById("add-new-book-form").elements;
+  const bookTitle = inputs["book-title"];
+  const bookAuthor = inputs["book-author"];
+  const bookPages = inputs["book-pages"];
+  const bookStatus = inputs["book-status"];
+  addBookToLibrary(
+    bookTitle.value,
+    bookAuthor.value,
+    parseInt(bookPages.value),
+    bookStatus.value,
+  );
+  displayBooks(myLibrary);
+  bookTitle.value = "";
+  bookAuthor.value = "";
+  bookPages.value = "";
+  bookStatus.value = "Unread";
+  // lg(bookTitle.value);
+  // lg(bookAuthor.value);
+  // lg(bookPages.value);
+  // lg(bookStatus.value);
+});
+
+//
+//
+//
+//
+
 // lg(myLibrary[0]["title"]);
 
 // const bookTitle = document.createElement("h2");

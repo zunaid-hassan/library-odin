@@ -154,6 +154,7 @@ h1 {
   /* align-items: center; */
   transition-duration: 0.2s;
   transition-timing-function: ease;
+  cursor: default;
 }
 
 .book-card:hover {
@@ -267,11 +268,11 @@ h1 {
   top: 4px;
 }
 
-.add-new-book input[type="radio"][value="read"]:checked {
+.add-new-book input[type="radio"][id="read-status"]:checked {
   background-color: lightgreen;
 }
 
-.add-new-book input[type="radio"][value="unread"]:checked {
+.add-new-book input[type="radio"][id="unread-status"]:checked {
   background-color: lightcoral;
 }
 
