@@ -14,7 +14,6 @@
       <div class="title grid">
         <h1 class="hover-letters">Library App</h1>
         <span id="book-icon">🕮</span>
-        <!-- <p>Work-in-progress</p> -->
       </div>
 
       <div class="add-new-book-btn-container">
@@ -29,7 +28,7 @@
         </button>
       </div>
     </header>
-    <dialog id="add-new-book-modal" open>
+    <dialog id="add-new-book-modal">
       <p class="add-new-book-text">Add a new book:</p>
       <form id="add-new-book-form" method="dialog">
         <div class="add-new-book grid">
@@ -103,10 +102,15 @@
     <main class="wrapper grid">
       <div class="books-container grid">
         <div class="book-card grid">
-          <div class="card-title grid">
-            <h2 class="book-title">The Book Title</h2>
-            <button class="remove-book-btn">🗑</button>
-          </div>
+          <h2 class="book-title">The Book Title</h2>
+          <button class="remove-book-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
+              />
+            </svg>
+          </button>
           <div class="author label">Author:</div>
           <div class="author">The Author</div>
           <div class="pages label">Pages:</div>
@@ -114,30 +118,6 @@
           <div class="Read-status label">Status:</div>
           <div class="Read-status">Read</div>
         </div>
-
-        <!-- <div class="book-card grid">
-          <h2 class="book-title">Harry Potter</h2>
-
-          <div class="author label">Author:</div>
-          <div class="author">J.K. Rowling</div>
-          <div class="pages label">Pages:</div>
-          <div class="pages">309</div>
-          <div class="read-status label">Read?:</div>
-
-          <div class="read-status">read</div>
-        </div>
-
-        <div class="book-card grid">
-          <h2 class="book-title">The Hobbit</h2>
-
-          <div class="author label">Author:</div>
-          <div class="author">J.R.R. Tolkien</div>
-          <div class="pages label">Pages:</div>
-          <div class="pages">310</div>
-          <div class="read-status label">Read?:</div>
-
-          <div class="read-status">read</div>
-        </div> -->
       </div>
     </main>
   </body>

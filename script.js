@@ -40,6 +40,7 @@ function displayBooks(library) {
     bookCard.classList.add("book-card", "grid");
 
     displayBookTitle(book, bookCard);
+    displayRemoveBtn(bookCard);
     displayBookAuthor(book, bookCard);
     displayBookPages(book, bookCard);
     displayReadStatus(book, bookCard);
@@ -54,6 +55,19 @@ function displayBookTitle(book, bookCard) {
   bookTitle.textContent = book["title"];
 
   bookCard.appendChild(bookTitle);
+}
+
+function displayRemoveBtn(bookCard) {
+  const removeBtn = document.createElement("button");
+  removeBtn.classList.add("remove-book-btn");
+
+  removeBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
+              />
+            </svg>`;
+  bookCard.appendChild(removeBtn);
 }
 
 function displayBookAuthor(book, bookCard) {
@@ -114,7 +128,8 @@ closeBtn.addEventListener("click", (event) => {
   dialog.requestClose();
 });
 
-bookForm.addEventListener("submit", () => {
+bookForm.addEventListener("submit", (event) => {
+  // event.preventDefault();
   const inputs = document.getElementById("add-new-book-form").elements;
   const bookTitle = inputs["book-title"];
   const bookAuthor = inputs["book-author"];
