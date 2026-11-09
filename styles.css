@@ -160,7 +160,7 @@ h1 {
 
 .book-card:hover {
   scale: 1.05;
-  box-shadow: 3px 3px 10px 0px lightslategrey;
+  box-shadow: 2px 2px 3px 0px lightslategrey;
 }
 
 .card-title {
