@@ -142,7 +142,7 @@ bookForm.addEventListener("submit", (event) => {
     parseInt(bookPages.value),
     bookStatus.value,
   );
-  displayBooks(myLibrary);
+  updateDisplayBook(myLibrary);
   bookTitle.value = "";
   bookAuthor.value = "";
   bookPages.value = "";
