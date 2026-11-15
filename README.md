@@ -2,7 +2,7 @@
 
 ### Description
 
-Library project from The Odin Project.
+A simple Library app that stores books as objects in an array and renders them on the page as cards. Each book has a unique ID generated with `crypto.randomUUID()`. Users can add books through a form in a `<dialog>` modal, remove them, and toggle their read status. Display logic is kept separate from the underlying book data. No persistent storage; data resets on reload.
 
 ### Links
 
@@ -10,13 +10,13 @@ Project link: https://www.theodinproject.com/lessons/node-path-javascript-librar
 
 Live preview: https://zunaid-hassan.github.io/library-odin/
 
-<!-- ### Preview
+### Preview
 
-<img src="./images/preview.png" alt="Screenshot of the admin dashboard project"> -->
+<img src="./assets/images/preview.png" alt="Screenshot of the admin dashboard project">
 
-### Credits & Attribution
+### Attribution
 
-**Images**
+**Icons**
 
 - Book icon taken from [School and Learning pack](https://www.flaticon.com/packs/people-avatar-9) by [Karyative
   ](https://www.flaticon.com/authors/karyative), Flaticon
@@ -25,12 +25,10 @@ Live preview: https://zunaid-hassan.github.io/library-odin/
 
 - [Material Design Icons](https://pictogrammers.com/library/mdi/) from Pictogrammers -->
 
-<!-- **Fonts**
+**Fonts**
 
-https://fonts.google.com/specimen/Neuton?preview.layout=grid&lang=en_Latn&categoryFilters=Feeling:%2FExpressive%2FBusiness&preview.lang=en_Latn&preview.script=Latn
+- [DM Serif Text](https://fonts.google.com/specimen/DM+Serif+Text?preview.script=Latn) by Colophon Foundry
 
-https://fonts.google.com/specimen/DM+Serif+Text?preview.layout=grid&lang=en_Latn&categoryFilters=Feeling:%2FExpressive%2FBusiness&preview.lang=en_Latn&preview.script=Latn
-
-- [Roboto](https://fonts.google.com/specimen/Roboto) by Christian Robertson, ParaType, Font Bureau -->
+- [Roboto](https://fonts.google.com/specimen/Roboto) by Christian Robertson, ParaType, Font Bureau
 
 <!-- COLOR PALLETE: https://colorhunt.co/palette/2900445000718a2a78eee3b0 -->
