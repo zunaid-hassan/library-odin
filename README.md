@@ -18,8 +18,7 @@ Live preview: https://zunaid-hassan.github.io/library-odin/
 
 **Icons**
 
-- Book icon taken from [School and Learning pack](https://www.flaticon.com/packs/school-and-learning-7) by [Karyative
-  ](https://www.flaticon.com/authors/karyative), Flaticon
+- Book icon taken from [School and Learning pack](https://www.flaticon.com/packs/school-and-learning-7) by [Karyative](https://www.flaticon.com/authors/karyative), Flaticon
 
 - [Material Design Icons](https://pictogrammers.com/library/mdi/) from Pictogrammers
 
