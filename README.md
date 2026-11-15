@@ -2,7 +2,7 @@
 
 ### Description
 
-A simple Library app that stores books as objects in an array and renders them on the page as cards. Each book has a unique ID generated with `crypto.randomUUID()`. Users can add books through a form in a `<dialog>` modal, remove them, and toggle their read status. Display logic is kept separate from the underlying book data. No persistent storage; data resets on reload.
+A simple Library app that stores books as objects in an array and renders them on the page as cards. Books are built with a `Book` constructor, each with a unique ID from `crypto.randomUUID()`, and a `Book.prototype` method handles toggling read status so all instances share it. Users can add books through a `<dialog>` form, remove them, and flip their read status. Display logic is kept separate from the book data. No persistent storage; data resets on reload.
 
 ### Links
 
@@ -18,12 +18,10 @@ Live preview: https://zunaid-hassan.github.io/library-odin/
 
 **Icons**
 
-- Book icon taken from [School and Learning pack](https://www.flaticon.com/packs/people-avatar-9) by [Karyative
+- Book icon taken from [School and Learning pack](https://www.flaticon.com/packs/school-and-learning-7) by [Karyative
   ](https://www.flaticon.com/authors/karyative), Flaticon
 
-<!-- **Icons**
-
-- [Material Design Icons](https://pictogrammers.com/library/mdi/) from Pictogrammers -->
+- [Material Design Icons](https://pictogrammers.com/library/mdi/) from Pictogrammers
 
 **Fonts**
 
