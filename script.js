@@ -11,6 +11,14 @@ function Book(title, author, pages, readStatus) {
   this.id = self.crypto.randomUUID();
 }
 
+Book.prototype.toggleStatus = function () {
+  if (this.readStatus === "Read") {
+    this.readStatus = "Unread";
+  } else {
+    this.readStatus = "Read";
+  }
+};
+
 function addBookToLibrary(title, author, pages, readStatus) {
   const id = self.crypto.randomUUID();
   const newBook = new Book(title, author, pages, readStatus, id);
@@ -99,11 +107,13 @@ function displayBookPages(book, bookCard) {
 
 function displayReadStatus(book, bookCard) {
   const bookReadStatusLabel = document.createElement("div");
-  bookReadStatusLabel.classList.add("Read-status", "label");
+  bookReadStatusLabel.classList.add("read-status", "label");
   bookReadStatusLabel.textContent = "Status:";
 
   const bookReadStatus = document.createElement("div");
   bookReadStatus.classList.add("read-status");
+
+  bookReadStatus.setAttribute("data-status", book["readStatus"]);
   bookReadStatus.textContent = book["readStatus"];
 
   bookCard.appendChild(bookReadStatusLabel);
@@ -174,6 +184,16 @@ booksContainer.addEventListener("click", (event) => {
         // lg(`library after:`);
         // lt(myLibrary);
         // lg(myLibrary.length);
+        updateDisplayBook(myLibrary);
+      }
+    }
+  } else if (event.target.classList.value === "read-status") {
+    const idToToggle = event.target.closest(".book-card").dataset.id;
+    // lg(idToToggle);
+    for (let i = 0; i < myLibrary.length; i++) {
+      if (myLibrary[i]["id"] === idToToggle) {
+        // lg(myLibrary[i].info());
+        myLibrary[i].toggleStatus();
         updateDisplayBook(myLibrary);
       }
     }
