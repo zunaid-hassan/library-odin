@@ -249,6 +249,24 @@ h1 {
 
 /* MODAL STYLING */
 
+#add-new-book-modal {
+  margin: auto;
+  font-size: 1.5rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  /* border-color: rgb(243, 121, 99);
+  border-width: 5px; */
+  border: none;
+  background-color: var(--bg-clr);
+
+  box-shadow: 1px 1px 10px 5px var(--bg-modal-clr);
+}
+
+::backdrop {
+  backdrop-filter: blur(3px);
+  background-color: var(--bg-modal-clr);
+}
+
 .label {
   font-weight: bold;
   grid-column: 1;
@@ -259,17 +277,6 @@ input:not([type="radio"]):focus {
   box-shadow: 1px 1px 5px rgb(171, 171, 171);
   outline: 2px solid var(--accent-lightest-clr);
   outline-offset: -2px;
-}
-
-#add-new-book-modal {
-  margin: auto;
-  font-size: 1.5rem;
-  padding: 2rem;
-  border-radius: 1.5rem;
-  /* border-color: rgb(243, 121, 99);
-  border-width: 5px; */
-  border: none;
-  background-color: var(--bg-clr);
 }
 
 #status-value {
@@ -302,11 +309,6 @@ input:not([type="radio"]):focus {
 .submit-new-book-btn:active {
   background-color: var(--accent-lightest-clr);
   cursor: pointer;
-}
-
-::backdrop {
-  backdrop-filter: blur(3px);
-  background-color: var(--bg-modal-clr);
 }
 
 .add-new-book.grid {
