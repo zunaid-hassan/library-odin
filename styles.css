@@ -350,6 +350,7 @@ input:not([type="radio"]):focus {
 
   position: relative;
   top: 4px;
+  cursor: pointer;
 }
 
 .add-new-book input[type="radio"][id="read-status"]:checked {
