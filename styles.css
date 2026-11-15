@@ -20,25 +20,29 @@
 
 :root {
   font-family: "DM Serif Text", serif;
-  --main-accent-clr: tomato;
-  --main-bg-clr: beige;
+  --accent-clr: #290044;
+  --accent-lighter-clr: #500071;
+  --accent-lightest-clr: #8a2a78;
+  --bg-modal-clr: #8a2a784b;
+  --bg-clr: #eee3b0;
+  --bg-lighter-clr: #eae5cc;
+  --book-pages-svg: #c9b5e0;
 }
 
 body {
-  background-color: var(--main-bg-clr);
+  background-color: var(--bg-clr);
   height: 100vh;
 }
 
 header.grid {
-  background-color: LightSalmon;
-  padding: 2rem;
+  background-color: var(--accent-clr);
+  padding: 2rem 10rem;
   grid-template-columns: 1fr auto 1fr;
 }
 
 .title.grid {
-  border: 5px solid var(--main-accent-clr);
-  color: crimson;
-  background-color: antiquewhite;
+  color: var(--accent-lighter-clr);
+  background-color: var(--bg-clr);
   border-radius: 1rem;
   text-align: center;
   padding: 1rem 2rem;
@@ -53,7 +57,7 @@ header.grid {
 }
 
 .title:hover {
-  background-color: wheat;
+  background-color: antiquewhite;
 }
 .title h1 {
   font-size: 2rem;
@@ -71,12 +75,13 @@ header.grid {
 .hover-letter:hover {
   scale: 1.2;
   cursor: default;
-  color: tomato;
+  color: var(--accent-lightest-clr);
 }
 
 h1 {
   cursor: default;
   display: inline;
+  align-self: center;
 }
 
 #book-icon {
@@ -86,9 +91,14 @@ h1 {
   transition-timing-function: ease;
 }
 
+#book-icon svg {
+  width: 3rem;
+  height: auto;
+}
+
 #book-icon:hover {
   scale: 1.5;
-  color: tomato;
+  color: var(--accent-lightest-clr);
   cursor: default;
 }
 
@@ -106,8 +116,8 @@ h1 {
 }
 
 .add-new-book-btn {
-  background-color: tomato;
-  border: 4px solid tomato;
+  background-color: var(--bg-clr);
+  border: none;
   padding: 1rem;
   border-radius: 1rem;
   font-size: 1.2rem;
@@ -120,12 +130,12 @@ h1 {
 }
 
 .add-new-book-btn:hover {
-  background-color: rgba(251, 177, 164, 0.813);
+  background-color: var(--book-pages-svg);
   cursor: pointer;
 }
 
 .add-new-book-btn:active {
-  background-color: MistyRose;
+  background-color: white;
   cursor: pointer;
 }
 
@@ -135,7 +145,7 @@ h1 {
 
 .wrapper.grid {
   grid-template-columns: 1fr 6fr 1fr;
-  box-shadow: 0px 3px 5px lightslategrey inset;
+  box-shadow: 0px 3px 2px var(--bg-modal-clr) inset;
 }
 
 .books-container.grid {
@@ -143,13 +153,12 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.book-card {
+.book-card.grid {
   font-size: 1rem;
   grid-template-columns: auto auto;
   grid-template-rows: repeat(4, auto);
   background-color: white;
 
-  border: 4px solid tomato;
   width: 100%;
   border-radius: 1rem 3rem 3rem 1rem;
   row-gap: 1rem;
@@ -158,11 +167,12 @@ h1 {
   transition-timing-function: ease;
   cursor: default;
   position: relative;
+  align-items: center;
 }
 
 .book-card:hover {
-  scale: 1.01;
-  box-shadow: 2px 2px 3px 0px lightslategrey;
+  scale: 1.02;
+  /* box-shadow: 2px 2px 3px 0px lightslategrey; */
 }
 
 .card-title {
@@ -187,27 +197,23 @@ h1 {
 }
 
 .read-status[data-status="Read"] {
-  background-color: lightgreen;
-
-  border: 1px solid darkolivegreen;
+  background-color: springgreen;
 }
 .read-status[data-status="Read"]:hover {
-  background-color: rgb(170, 238, 170);
+  background-color: rgb(133, 248, 191);
 }
 .read-status[data-status="Read"]:active {
-  background-color: rgb(255, 255, 255);
+  background-color: palegreen;
 }
 
 .read-status[data-status="Unread"] {
   background-color: lightcoral;
-
-  border: 1px solid darkred;
 }
 .read-status[data-status="Unread"]:hover {
-  background-color: rgb(234, 183, 183);
+  background-color: pink;
 }
 .read-status[data-status="Unread"]:active {
-  background-color: rgb(255, 255, 255);
+  background-color: lightpink;
 }
 
 .remove-book-btn {
@@ -226,7 +232,7 @@ h1 {
   /* text-align: center; */
   justify-content: center;
   align-items: flex-end;
-  transition-duration: 0.2s;
+  /* transition-duration: 0.2s; */
 }
 
 .remove-book-btn:hover {
@@ -239,10 +245,18 @@ h1 {
   scale: 0.9;
 }
 
+/* MODAL STYLING */
+
 .label {
   font-weight: bold;
   grid-column: 1;
   text-align: right;
+}
+
+input:not([type="radio"]):focus {
+  box-shadow: 1px 1px 5px rgb(171, 171, 171);
+  outline: 2px solid var(--accent-lightest-clr);
+  outline-offset: -2px;
 }
 
 #add-new-book-modal {
@@ -250,9 +264,15 @@ h1 {
   font-size: 1.5rem;
   padding: 2rem;
   border-radius: 1.5rem;
-  border-color: rgb(243, 121, 99);
-  border-width: 5px;
-  background-color: antiquewhite;
+  /* border-color: rgb(243, 121, 99);
+  border-width: 5px; */
+  border: none;
+  background-color: var(--bg-clr);
+}
+
+#status-value {
+  display: flex;
+  gap: 1.2rem;
 }
 
 .btns-container.grid {
@@ -261,8 +281,9 @@ h1 {
 
 .close-add-new-book-btn,
 .submit-new-book-btn {
-  background-color: tomato;
-  border: 3px solid tomato;
+  background-color: var(--accent-clr);
+  color: var(--bg-lighter-clr);
+  border: none;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   font-size: 1.2rem;
@@ -271,19 +292,19 @@ h1 {
 }
 .close-add-new-book-btn:hover,
 .submit-new-book-btn:hover {
-  background-color: rgba(251, 177, 164, 0.813);
+  background-color: var(--accent-lighter-clr);
   cursor: pointer;
 }
 
 .close-add-new-book-btn:active,
 .submit-new-book-btn:active {
-  background-color: MistyRose;
+  background-color: var(--accent-lightest-clr);
   cursor: pointer;
 }
 
 ::backdrop {
-  backdrop-filter: blur(2px);
-  background-color: rgba(255, 99, 71, 0.252);
+  backdrop-filter: blur(3px);
+  background-color: var(--bg-modal-clr);
 }
 
 .add-new-book.grid {
@@ -307,10 +328,11 @@ h1 {
 
 .add-new-book input[type="text"],
 .add-new-book input[type="number"] {
-  border: 2px solid tomato;
+  border: none;
   border-radius: 0.5rem;
   padding: 0.5rem;
   font-size: 1rem;
+  height: 2.5rem;
 }
 
 .add-new-book input[type="radio"] {
@@ -320,7 +342,7 @@ h1 {
   width: 20px;
   height: 20px;
 
-  border: 2px solid tomato;
+  border: 2px solid var(--accent-lightest-clr);
   transition-duration: 0.2s;
   margin-right: 5px;
 
@@ -351,6 +373,6 @@ form {
 / */
 /* OTHER STYLING */
 ::selection {
-  background-color: tomato;
-  color: white;
+  background-color: var(--accent-lightest-clr);
+  color: var(--bg-lighter-clr);
 }
